@@ -4,8 +4,8 @@ const renderPlayer = (player, index) => {
     return (
         <tr key={index}>
             <td>{player.name} </td>
-            <td>{player.position} </td>
-            <td>{player.team} </td>
+            <td>{player.email} </td>
+            <td>{player.username} </td>
         </tr>
     )
  }
@@ -16,8 +16,8 @@ function DarkTable(props) {
       <thead>
         <tr>
           <th>Name</th>
-          <th>Position</th>
-          <th>Team</th>
+          <th>Email</th>
+          <th>Username</th>
         </tr>
       </thead>
       <tbody>
