@@ -19,10 +19,8 @@ import { getDatabase, onValue, ref } from "firebase/database"
                 pulledUsers = snapshot.val();
                 console.log("pulledUsers")
                 console.log(pulledUsers)
-                var stuff = snapshot.val();
                 console.log(pulledUsers.length)
-                stuff = stuff.filter(filterUsers)
-                setUsers(stuff);
+                setUsers(pulledUsers);
             }
         })
     }, []);
@@ -47,7 +45,7 @@ import { getDatabase, onValue, ref } from "firebase/database"
     }
 
     return (
-        <div>
+        <div className="container">
             <input placeholder="Search users.." onChange={handleChange}/>
             <DarkTable players={users}/>
         </div>
@@ -55,14 +53,3 @@ import { getDatabase, onValue, ref } from "firebase/database"
  }
 
 export default Links;
-
-// export default class Links extends Component {
-
-//     render() {
-//         return (
-//             <div>
-//                 <DarkTable players={players}/>
-//             </div>
-//         )
-//     }
-// }

@@ -5,6 +5,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Home from './Home';
 import About from './About';
 import Links from './Links';
+import Profile from './Profile';
 
 import {
   BrowserRouter as Router,
@@ -16,7 +17,7 @@ import {
 function NavbarComp() {
   return (
     <Router>
-        <div>
+        <div className='container'>
             <Navbar bg="light" expand="lg">
             <Container>
                 <Navbar.Brand href="#home">Under Radar</Navbar.Brand>
@@ -27,8 +28,8 @@ function NavbarComp() {
                     <Nav.Link as={Link} to={"/about"}>About</Nav.Link>
                     <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                     <NavDropdown.Item as={Link} to={"/links"}>Links</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">
-                        Another action
+                    <NavDropdown.Item as={Link} to={"/profile"}>
+                        Example User
                     </NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                     <NavDropdown.Divider />
@@ -46,6 +47,7 @@ function NavbarComp() {
             <Route path="/home" element={<Home/>} />
             <Route path="/about" element={<About/>} />
             <Route path="/links" element={<Links/>} />
+            <Route path="/profile" element={<Profile/>} />
             </Routes>
         </div>
     </Router>
