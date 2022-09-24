@@ -4,6 +4,7 @@ import { getDatabase, onValue, ref } from "firebase/database";
 import Image from 'react-bootstrap/Image';
 
  const db = getDatabase(app);
+ export const globalData = {};
 
  const renderPlayer = (notification, index) => {
     return (
@@ -31,6 +32,7 @@ import Image from 'react-bootstrap/Image';
         const profileRef = ref(db, 'ryanhelgeson14-gmail-com');
         onValue(profileRef, (snapshot) => {
             let user = snapshot.val()
+            globalData.user = user;
             console.log(user);
             setUser(user)
         })

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import app from "../util/firebase";
 import { getDatabase, onValue, ref } from "firebase/database";
+import { globalData } from "./Profile";
 
 const db = getDatabase(app);
+
 
 const renderNotification = (notification, index) => {
     console.log(notification);
@@ -19,7 +21,12 @@ function Notifications() {
     const [notifications, setNotifications] = useState([]);
 
     useEffect(() => {
-        const profileRef = ref(db, 'ryanhelgeson14-gmail-com/Notifications');
+        var path = globalData.user.emailAddress;
+        path = path.replace("@", "-");
+        path = path.replace(".", "-");
+        path = path + "/Notifications";
+        console.log(path);
+        const profileRef = ref(db, path);
         onValue(profileRef, (snapshot) => {
             let notifications = snapshot.val()
             console.log(notifications);
