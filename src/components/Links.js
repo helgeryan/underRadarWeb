@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
 import DarkTable from "./DarkTable";
-import app from "../util/firebase";
-import { getDatabase, onValue, ref } from "firebase/database"
-
- const db = getDatabase(app);
-
+import { db } from "./Profile";
+import { onValue, ref } from "firebase/database"
 
  var pulledUsers = [];
  var query

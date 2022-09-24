@@ -3,7 +3,7 @@ import app from "../util/firebase";
 import { getDatabase, onValue, ref } from "firebase/database";
 import Image from 'react-bootstrap/Image';
 
- const db = getDatabase(app);
+export const db = getDatabase(app);
 
  const renderPlayer = (notification, index) => {
     return (

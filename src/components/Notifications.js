@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import app from "../util/firebase";
-import { getDatabase, onValue, ref } from "firebase/database";
-
-const db = getDatabase(app);
+import { onValue, ref } from "firebase/database";
+import { db } from "./Profile";
 
 const renderNotification = (notification, index) => {
     console.log(notification);
