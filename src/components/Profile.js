@@ -62,4 +62,4 @@ import Image from 'react-bootstrap/Image';
     )
  }
 
-export default Profile;
+ export default Profile;

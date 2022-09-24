@@ -6,6 +6,7 @@ import Home from './Home';
 import About from './About';
 import Links from './Links';
 import Profile from './Profile';
+import Notifications from './Notifications';
 
 import {
   BrowserRouter as Router,
@@ -25,6 +26,7 @@ function NavbarComp() {
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
                     <Nav.Link as={Link} to={"/home"}>Home</Nav.Link>
+                    <Nav.Link as={Link} to={"/notifications"}>Notifications</Nav.Link>
                     <Nav.Link as={Link} to={"/about"}>About</Nav.Link>
                     <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                     <NavDropdown.Item as={Link} to={"/links"}>Links</NavDropdown.Item>
@@ -45,6 +47,7 @@ function NavbarComp() {
         <div>
             <Routes>
             <Route path="/home" element={<Home/>} />
+            <Route path="/notifications" element={<Notifications/>} />
             <Route path="/about" element={<About/>} />
             <Route path="/links" element={<Links/>} />
             <Route path="/profile" element={<Profile/>} />
